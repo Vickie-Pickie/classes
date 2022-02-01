@@ -2,9 +2,14 @@ import Magician from '../Magician';
 import { TYPE_MAGICIAN } from '../Character';
 
 test('Персонаж Magician успешно создается', () => {
-  const hero = new Magician('Алёша');
-  expect(hero.name).toBe('Алёша');
-  expect(hero.type).toBe(TYPE_MAGICIAN);
-  expect(hero.attack).toEqual(10);
-  expect(hero.defence).toEqual(40);
+  const received = new Magician('Алёша');
+  const expected = {
+    name: 'Алёша',
+    type: TYPE_MAGICIAN,
+    health: 100,
+    level: 1,
+    attack: 10,
+    defence: 40,
+  };
+  expect(received).toEqual(expected);
 });

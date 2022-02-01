@@ -2,9 +2,14 @@ import Swordsman from '../Swordsman';
 import { TYPE_SWORDSMAN } from '../Character';
 
 test('Персонаж Swordsman успешно создается', () => {
-  const hero = new Swordsman('Алёша');
-  expect(hero.name).toBe('Алёша');
-  expect(hero.type).toBe(TYPE_SWORDSMAN);
-  expect(hero.attack).toEqual(40);
-  expect(hero.defence).toEqual(10);
+  const received = new Swordsman('Алёша');
+  const expected = {
+    name: 'Алёша',
+    type: TYPE_SWORDSMAN,
+    health: 100,
+    level: 1,
+    attack: 40,
+    defence: 10,
+  };
+  expect(received).toEqual(expected);
 });

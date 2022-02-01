@@ -2,9 +2,14 @@ import Daemon from '../Daemon';
 import { TYPE_DAEMON } from '../Character';
 
 test('Персонаж Daemon успешно создается', () => {
-  const hero = new Daemon('Алёша');
-  expect(hero.name).toBe('Алёша');
-  expect(hero.type).toBe(TYPE_DAEMON);
-  expect(hero.attack).toEqual(10);
-  expect(hero.defence).toEqual(40);
+  const received = new Daemon('Алёша');
+  const expected = {
+    name: 'Алёша',
+    type: TYPE_DAEMON,
+    health: 100,
+    level: 1,
+    attack: 10,
+    defence: 40,
+  };
+  expect(received).toEqual(expected);
 });
